@@ -163,7 +163,7 @@ export async function saveScreenshot<T extends PlayerComponent>(
               .replaceAll("{{TITLE}}", title)
               .replaceAll("{{DURATION}}", humanizedDuration),
           )
-          .replace(/^!/, ""),
+          .replace(/^!/, "").replace("[]", "[" + timeInDuration + "]"),
       },
       {
         editor,

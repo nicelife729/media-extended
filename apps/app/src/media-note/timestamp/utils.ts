@@ -95,7 +95,7 @@ export function timestampGenerator(
     return (newNotePath: string) =>
       fileManager
         .generateMarkdownLink(file, newNotePath, hash, timeInDuration)
-        .replace(/^!/, "");
+        .replace(/^!/, "").replace("[]", "[" + timeInDuration + "]");
   } else {
     const sourceUrl = mediaInfo.print(frag);
     return () => `[${timeInDuration}](${sourceUrl}${hash})`;
